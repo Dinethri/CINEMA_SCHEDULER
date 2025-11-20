@@ -66,24 +66,17 @@ export default class DetailsPage extends BasePage {
     await this.page.click(this.cinemaListTab);
   }
 
-  async navigateToDetailsTab(){
-
-  }
-
   async getMovieTitleSuggestions(){
-
-  }
-
-  async allTextContents(){
-
+    // return this.page.locator('.typeahead-suggestion');
+    return this.page.locator('[data-testid^="movieTitle-option"]');
   }
 
   async getShowDateError(){
-
+    return this.page.locator('[data-testid="showDate-error"]').innerText();
   }
 
-  async getFormErrorMessage(){
-    
+  async getPriceDetailErrorMessage(){
+    return this.page.locator('[data-testid="ticketPrice-error"]').innerText();
   }
 
 }

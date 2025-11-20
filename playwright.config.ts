@@ -9,7 +9,8 @@ export default defineConfig({
         viewport: {width:1200, height: 720},
         actionTimeout:8000,
         trace: 'on-first-retry', //Record trace on first retry of a failed test
+        screenshot: "only-on-failure",//screenshot in failure point
     },
     reporter: [['list'], ['html', {outputFolder: 'playwright-report'}]],
-    // retries: 1,
+    retries: 1,//take another run after one failure
 });
